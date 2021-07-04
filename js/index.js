@@ -17,8 +17,8 @@ const app = {
     {
       name: "Childhood dreams",
       singer: "Seraphine",
-      path: "../music/song1.mp3",
-      image: "../img/song1.jpg",
+      path: "./music/song1.mp3",
+      image: "./img/song1.jpg",
     },
     {
       name: "MORE",
