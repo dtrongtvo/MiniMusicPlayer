@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #ec1f55;
+  --text-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn {
+  color: #666;
+  font-size: 18px;
+}
+
+.player {
+  width: 480px;
+  margin: 0 auto;
+}
+
+.player .icon-pause {
+  display: none;
+}
+
+.player.playing .icon-pause {
+  display: inline-block;
+}
+
+.player.playing .icon-play {
+  display: none;
+}
+
+/* DASHBOARD */
+.dashboard {
+  background-color: white;
+  padding: 16px 16px 14px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 480px;
+}
+
+.dashboard header {
+  text-align: center;
+}
+
+.dashboard header h4 {
+  font-size: 12px;
+  color: var(--primary-color);
+}
+
+.dashboard header h2 {
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+/* CD */
+.cd {
+  display: flex;
+  margin: auto;
+  width: 200px;
+}
+
+.cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+}
+
+/* CONTROL */
+.dashboard .control {
+  display: flex;
+  justify-content: space-around;
+  margin: 18px 0 8px;
+  align-items: center;
+}
+
+.btn-toggle-play {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* PROGRESS */
+.progress {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 6px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 6px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* PLAYLIST */
+.playlist {
+    margin-top: 420px;
+    padding: 15px;
+}
+
+.playlist .song {
+    margin-bottom: 12px;
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.playlist .song .thumb {
+    width: 44px;
+    height: 44px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.playlist .song .body {
+    margin: 0 15px;
+    flex: 1;
+}
+
+.playlist .song .body .author {
+    font-size: 12px;
+    color: #999;
+}
+
+.playlist .song .option {
+    padding: 16px 8px;
+    color: #999;
+}
+
+
