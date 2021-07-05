@@ -192,8 +192,17 @@ const app = {
       }
       else _this.nextSong()
     }
+    
+    // When click a song
+    $$('.song').forEach((song,index) => {
+      song.onclick =  function() {
+        _this.currentIndex = index;
+        _this.loadCurrentSong();
+        _this.updateActiveState();
+        audio.play();
+      }
+    })
   },
-
   loadCurrentSong: function () {
     heading.textContent = this.currentSong.name;
     cdThumb.style.backgroundImage = `url(${this.currentSong.image})`;
@@ -233,13 +242,15 @@ const app = {
     this.updateActiveState();
     audio.play();
   },
+
   start: function () {
     this.defineProperties();
-    this.handleEvents();
     this.loadCurrentSong();
-
     this.render();
     this.updateActiveState();
+    this.handleEvents();
+
+
   },
 };
 

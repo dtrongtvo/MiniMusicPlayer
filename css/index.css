@@ -137,6 +137,10 @@ body {
     align-items: center;
 }
 
+.playlist .song:active {
+  background-color: rgba(100, 100, 100, 0.1);
+}
+
 .playlist .song.active {
   background-color: #ec1f55;
   color: white;
