@@ -11,6 +11,7 @@ const randomBtn = $('.btn-random');
 const repeatBtn = $('.btn-repeat');
 const player = $(".player");
 const progress = $("#progress");
+const playList = $('.playlist')
 
 const app = {
   currentIndex: 0,
@@ -69,9 +70,9 @@ const app = {
   ],
   render: function () {
     const htmls = this.songs
-      .map((song) => {
+      .map((song, index) => {
         return `
-      <div class="song ">
+      <div class="song" data-index=${index}>
         <div
           class="thumb"
           style="background-image: url(${song.image})"></div>
@@ -194,14 +195,23 @@ const app = {
     }
     
     // When click a song
-    $$('.song').forEach((song,index) => {
-      song.onclick =  function() {
-        _this.currentIndex = index;
+    // $$('.song').forEach((song,index) => {
+    //   song.onclick =  function() {
+    //     _this.currentIndex = index;
+    //     _this.loadCurrentSong();
+    //     _this.updateActiveState();
+    //     audio.play();
+    //   }
+    // })
+    playList.onclick = function(e) {
+      const songNode = e.target.closest('.song:not(.active)')
+      if(songNode || e.target.closest('.option')) {
+        _this.currentIndex = Number(songNode.dataset.index);
         _this.loadCurrentSong();
         _this.updateActiveState();
         audio.play();
       }
-    })
+    }
   },
   loadCurrentSong: function () {
     heading.textContent = this.currentSong.name;
